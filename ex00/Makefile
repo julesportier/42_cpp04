@@ -26,7 +26,9 @@ NAME := animals
 SRC_DIR := src
 vpath %.cpp $(SRC_DIR)
 SRC :=	main.cpp \
-		Animal.cpp
+		Animal.cpp \
+		Dog.cpp \
+		Cat.cpp
 
 BUILD_DIR := build
 OBJ := $(SRC:%.cpp=$(BUILD_DIR)/%.o)
