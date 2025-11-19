@@ -13,8 +13,8 @@ Dog::Dog()
 
 Dog::Dog(const Dog& src)
 {
-	m_type = src.getType();
-	m_sound = src.getSound();
+	m_type = src.m_type;
+	m_sound = src.m_sound;
 	std::cout << "Dog copy constructor called\n";
 }
 
@@ -26,8 +26,8 @@ Dog::~Dog()
 Dog& Dog::operator=(const Dog& src)
 {
 	if (this != &src) {
-		m_type = src.getType();
-		m_sound = src.getSound();
+		m_type = src.m_type;
+		m_sound = src.m_sound;
 	}
 	std::cout << "Dog copy assignement operator called\n";
 	return (*this);
