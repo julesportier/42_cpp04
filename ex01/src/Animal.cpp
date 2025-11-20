@@ -12,8 +12,8 @@ Animal::Animal()
 }
 
 Animal::Animal(const Animal& src)
-	: m_type(src.getType())
-	, m_sound(src.getSound())
+	: m_type(src.m_type)
+	, m_sound(src.m_sound)
 {
 	std::cout << "Animal copy constructor called\n";
 }
@@ -26,8 +26,8 @@ Animal::~Animal()
 Animal& Animal::operator=(const Animal& src)
 {
 	if (this != &src) {
-		m_type = src.getType();
-		m_sound = src.getSound();
+		m_type = src.m_type;
+		m_sound = src.m_sound;
 	}
 	std::cout << "Animal copy assignement operator called\n";
 	return (*this);
@@ -51,5 +51,5 @@ std::string Animal::getSound() const
  * ********/
 void Animal::makeSound() const
 {
-	std::cout << getSound() << '\n';
+	std::cout << m_sound << '\n';
 }
