@@ -9,6 +9,7 @@ class Cat : public Animal {
 public:
 	Cat();
 	Cat(const Cat& src);
+	Cat(const Brain& brain);
 	virtual ~Cat();
 	Cat& operator=(const Cat& src);
 	Brain* getBrain() const;
