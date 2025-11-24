@@ -23,10 +23,10 @@ Dog::Dog(const Brain& brain)
 
 Dog::Dog(const Dog& src)
 {
-	m_type = src.getType();
-	m_sound = src.getSound();
+	m_type = src.m_type;
+	m_sound = src.m_sound;
 	m_brain = new Brain;
-	*m_brain = *(src.getBrain());
+	*m_brain = *(src.m_brain);
 	std::cout << "Dog copy constructor called\n";
 }
 
@@ -40,9 +40,9 @@ Dog& Dog::operator=(const Dog& src)
 {
 	if (this != &src) {
 		m_brain = new Brain;
-		*m_brain = *(src.getBrain());
-		m_type = src.getType();
-		m_sound = src.getSound();
+		*m_brain = *(src.m_brain);
+		m_type = src.m_type;
+		m_sound = src.m_sound;
 	}
 	std::cout << "Dog copy assignement operator called\n";
 	return (*this);
