@@ -21,6 +21,15 @@ Cat::Cat(const Cat& src) : Animal::Animal(src)
 	std::cout << "Cat copy constructor called\n";
 }
 
+Cat::Cat(const Brain& brain)
+{
+      m_type = "Cat";
+      m_sound = "Meow";
+      m_brain = new Brain;
+      *m_brain = brain;
+      std::cout << "Cat constructor called\n";
+}
+
 Cat::~Cat()
 {
 	std::cout << "Cat destructor called\n";
