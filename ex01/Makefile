@@ -7,16 +7,17 @@ CXX := c++
 #########
 # FLAGS #
 #########
-STD_FLAGS :=	-std=c++98
-WARNINGS :=		-Wall -Werror -Wextra
-CXXFLAGS :=		$(STD_FLAGS) $(WARNINGS)
-CXXFLAGS_DB :=	$(STD_FLAGS) $(WARNINGS) -g3
-CXXFLAGS_AS :=	$(STD_FLAGS) $(WARNINGS) -g3 \
-				-fsanitize=address
-CFLAGS_MUS :=	$(STD_FLAGS) $(WARNINGS) -g3 \
-				-fsanitize=memory \
-				-fsanitize=undefined
-DEP_FLAGS := 	-MMD
+STD_FLAGS :=		-std=c++98
+WARNINGS :=			-Wall -Werror -Wextra
+CXXFLAGS :=			$(STD_FLAGS) $(WARNINGS)
+CXXFLAGS_DB :=		$(STD_FLAGS) $(WARNINGS) -g3
+CXXFLAGS_NOERR :=	$(STD_FLAGS) -Wall -Wextra -g3
+CXXFLAGS_AS :=		$(STD_FLAGS) $(WARNINGS) -g3 \
+					-fsanitize=address
+CFLAGS_MUS :=		$(STD_FLAGS) $(WARNINGS) -g3 \
+					-fsanitize=memory \
+					-fsanitize=undefined
+DEP_FLAGS := 		-MMD
 
 #########
 # FILES #
@@ -45,6 +46,8 @@ all: $(BUILD_DIR) $(NAME)
 
 dbg: CXXFLAGS = $(CXXFLAGS_DB)
 dbg: all
+noerr: CXXFLAGS = $(CXXFLAGS_NOERR)
+noerr: all
 
 asan: CXXFLAGS = $(CXXFLAGS_AS)
 asan: CXX = clang++
