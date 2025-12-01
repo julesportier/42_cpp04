@@ -1,9 +1,9 @@
 #include "Animal.h"
 #include <iostream>
 
-/****************
- * CONSTRUCTORS *
- * *************/
+/***************************
+ * CONSTRUCTORS/DESTRUCTOR *
+ * ************************/
 Animal::Animal() : m_type("Animal")
 {
 	std::cout << "Animal constructor called\n";
@@ -19,6 +19,9 @@ Animal::~Animal()
 	std::cout << "Animal destructor called\n";
 }
 
+/*************
+ * OPERATORS *
+ * **********/
 Animal& Animal::operator=(const Animal& src)
 {
 	if (this != &src) {

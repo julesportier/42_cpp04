@@ -1,9 +1,9 @@
 #include "Cat.h"
 #include <iostream>
 
-/****************
- * CONSTRUCTORS *
- * *************/
+/***************************
+ * CONSTRUCTORS/DESTRUCTOR *
+ * ************************/
 Cat::Cat()
 {
 	m_type = "Cat";
@@ -11,7 +11,7 @@ Cat::Cat()
 	std::cout << "Cat constructor called\n";
 }
 
-Cat::Cat(const Cat& src)
+Cat::Cat(const Cat& src) : Animal::Animal(src)
 {
 	m_type = src.m_type;
 	m_brain = new Brain;
@@ -25,6 +25,9 @@ Cat::~Cat()
 	std::cout << "Cat destructor called\n";
 }
 
+/*************
+ * OPERATORS *
+ * **********/
 Cat& Cat::operator=(const Cat& src)
 {
 	if (this != &src) {

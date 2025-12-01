@@ -1,9 +1,9 @@
 #include "Dog.h"
 #include <iostream>
 
-/****************
- * CONSTRUCTORS *
- * *************/
+/***************************
+ * CONSTRUCTORS/DESTRUCTOR *
+ * ************************/
 Dog::Dog()
 {
 	m_type = "Dog";
@@ -11,7 +11,7 @@ Dog::Dog()
 	std::cout << "Dog constructor called\n";
 }
 
-Dog::Dog(const Dog& src)
+Dog::Dog(const Dog& src) : Animal::Animal(src)
 {
 	m_type = src.m_type;
 	m_brain = new Brain;
@@ -25,6 +25,9 @@ Dog::~Dog()
 	std::cout << "Dog destructor called\n";
 }
 
+/*************
+ * OPERATORS *
+ * **********/
 Dog& Dog::operator=(const Dog& src)
 {
 	if (this != &src) {
